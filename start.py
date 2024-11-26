@@ -16,14 +16,8 @@ import re
 
 ## 환경변수 불러오기
 from dotenv import load_dotenv
-import os
+load_dotenv(dotenv_path="/path/to/your/.env")
 
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
-if api_key is None:
-    print("ERROR: .env 파일이 로드되지 않았거나 OPENAI_API_KEY가 설정되지 않았습니다.")
-else:
-    print(f"API Key: {api_key}")
 
 ## OpenAI API 키 불러오기
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
