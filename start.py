@@ -16,7 +16,11 @@ import re
 
 ## 환경변수 불러오기
 from dotenv import load_dotenv
+import os
+
 load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+print(f"API Key: {api_key}")
 
 ## OpenAI API 키 불러오기
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
