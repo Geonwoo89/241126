@@ -16,13 +16,16 @@ import re
 
 ## 환경변수 불러오기
 from dotenv import load_dotenv
-load_dotenv(dotenv_path="/path/to/your/.env")
+load_dotenv()
 
 
-## OpenAI API 키 불러오기
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+import streamlit as st
+
+# Streamlit Secrets에서 API 키 가져오기
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+
 if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY가 설정되지 않았습니다. .env 파일을 확인하거나 환경 변수를 설정하세요.")
+    raise ValueError("OPENAI_API_KEY가 설정되지 않았습니다.")
 
 ############################### 1단계 : PDF 문서를 벡터DB에 저장하는 함수들 ##########################
 
